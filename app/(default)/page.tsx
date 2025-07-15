@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Home - Open PRO",
-  description: "Page description",
+  title: "Layanify - AI-Powered Customer Service",
+  description: "Agent Customer Support Berbasis AI yang selalu tersedia 24/7, Menjawab chat dengan cepat & akurat dengan biaya yang sangat terjangkau",
 };
 
 import PageIllustration from "@/components/page-illustration";
