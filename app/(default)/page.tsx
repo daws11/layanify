@@ -7,8 +7,11 @@ import PageIllustration from "@/components/page-illustration";
 import Hero from "@/components/hero-home";
 import Workflows from "@/components/workflows";
 import Features from "@/components/features";
+import PricingSection from "@/components/pricing-section";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
+import WhyUsSection from "@/components/why-us-section";
+import FAQSection from "@/components/faq-section";
 
 export default function Home() {
   return (
@@ -17,8 +20,11 @@ export default function Home() {
       <Hero />
       <Workflows />
       <Features />
-      <Testimonials />
+      <WhyUsSection />
+      <PricingSection />
+      {/* <Testimonials /> */}
       <Cta />
+      <FAQSection />
     </>
   );
 }
