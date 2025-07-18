@@ -5,7 +5,7 @@ import FeaturesImage from "@/public/images/features.png";
 
 export default function Features() {
   return (
-    <section className="relative">
+    <section id="features" className="relative">
       <div
         className="pointer-events-none absolute left-1/2 top-0 -z-10 -mt-20 -translate-x-1/2"
         aria-hidden="true"
@@ -59,7 +59,7 @@ export default function Features() {
             />
           </div>
           {/* Items */}
-          <div className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3">
+          {/* <div className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3">
             <article>
               <svg
                 className="mb-3 fill-indigo-500"
@@ -182,7 +182,7 @@ export default function Features() {
               Otomatiskan proses repetitif untuk meningkatkan efisiensi tim dan mengurangi kesalahan manual 
               </p>
             </article>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

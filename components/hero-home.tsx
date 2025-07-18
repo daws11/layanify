@@ -12,7 +12,7 @@ export default function HeroHome() {
       waveOpacity={0.35}
       colors={["var(--color-primary)", "#818cf8", "#a5b4fc", "#f472b6", "#38bdf8"]}
     >
-      <section className="flex min-h-screen items-center justify-center bg-transparent px-4">
+      <section id="hero" className="flex min-h-screen items-center justify-center bg-transparent px-4">
         <div className="mx-auto w-full max-w-6xl">
           
           <div className="flex flex-col items-center justify-center py-12 md:py-24">
