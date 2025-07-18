@@ -101,12 +101,24 @@ export const WavyBackground = ({
     animationId = requestAnimationFrame(render);
   };
 
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     init();
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile]);
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
@@ -125,16 +137,25 @@ export const WavyBackground = ({
         containerClassName
       )}
     >
-      <canvas
-        className="absolute inset-0 z-0 w-full h-full"
-        ref={canvasRef}
-        id="canvas"
-        style={{
-          width: "100vw",
-          height: "100vh",
-          ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
-        }}
-      ></canvas>
+      {isMobile ? (
+        <img
+          src="/images/bg.jpg"
+          alt="Background"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
+          style={{ width: "100vw", height: "100vh" }}
+        />
+      ) : (
+        <canvas
+          className="absolute inset-0 z-0 w-full h-full"
+          ref={canvasRef}
+          id="canvas"
+          style={{
+            width: "100vw",
+            height: "100vh",
+            ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
+          }}
+        ></canvas>
+      )}
       <div className={cn("relative z-10 w-full h-full flex flex-col items-center justify-center", className)} {...props}>
         {children}
       </div>
